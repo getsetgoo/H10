@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical">
+    <TextView
+            android:text="@string/lengthTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/titleLabel"
+            android:textSize="24sp" android:gravity="center_horizontal"/>
+    <TextView
+            android:text="@string/fromLabelText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fromLabel"
+            android:labelFor="@+id/fromInput"
+    />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="@dimen/unitInputMaxWidth"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/fromInput"
+                android:autofillHints="no"
+        />
+        <TextView
+                android:text="@string/fromUnits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/fromUnits"/>
+    </LinearLayout>
+    <TextView
+            android:text="@string/toLabelText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toLabel"
+            android:labelFor="@+id/toInput"
+    />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="@dimen/unitInputMaxWidth"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/toInput"
+                android:autofillHints="no"
+        />
+        <TextView
+                android:text="@string/toUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/toUnits" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:text="@string/calcButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/calcButton" android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"/>
+        <Button
+                android:text="@string/clearButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/clearButton" android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"/>
+        <Button
+                android:text="@string/modeButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/modeButton" android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"/>
+    </LinearLayout>
+</LinearLayout>
