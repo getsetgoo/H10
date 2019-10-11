@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Main2Activity">
+    tools:context=".SettingsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/fromText"
@@ -18,27 +18,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="From" />
+            android:text="@string/fromLabelText" />
 
         <Spinner
             android:id="@+id/spin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
         <TextView
             android:id="@+id/toText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="To" />
+            android:text="@string/toLabelText" />
 
         <Spinner
             android:id="@+id/spin2"
@@ -51,14 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/doneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
-            android:src="@android:drawable/checkbox_on_background" />
+            android:src="@drawable/ic_check_black_24dp" />
     </RelativeLayout>
 
 </LinearLayout>
