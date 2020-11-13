@@ -1,5 +1,4 @@
 package com.example.conversioncalculator
-
 import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
@@ -37,29 +36,29 @@ class MainActivity : AppCompatActivity() {
         clearButton.setOnClickListener {
             clearFields()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(fromInput.windowToken, 0)
+            imm.hideSoftInputFromWindow(from.windowToken, 0)
         }
         calcButton.setOnClickListener {
             calculate()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(fromInput.windowToken, 0)
+            imm.hideSoftInputFromWindow(from.windowToken, 0)
         }
         modeButton.setOnClickListener {
             changeMode()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(fromInput.windowToken, 0)
+            imm.hideSoftInputFromWindow(from.windowToken, 0)
         }
 
 
-        val fromInput = findViewById<EditText>(R.id.fromInput)
-        val toInput = findViewById<EditText>(R.id.toInput)
+        val fromInput = findViewById<EditText>(R.id.from)
+        val toInput = findViewById<EditText>(R.id.to)
         fromInput.setOnFocusChangeListener { _, _ -> toInput.text.clear() }
         toInput.setOnFocusChangeListener { _, _ -> fromInput.text.clear() }
     }
 
     private fun clearFields() {
-        val fromInput = findViewById<EditText>(R.id.fromInput)
-        val toInput = findViewById<EditText>(R.id.toInput)
+        val fromInput = findViewById<EditText>(R.id.from)
+        val toInput = findViewById<EditText>(R.id.to)
 
         fromInput.text.clear()
         toInput.text.clear()
@@ -67,8 +66,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun calculate() {
-        val fromInput = findViewById<EditText>(R.id.fromInput)
-        val toInput = findViewById<EditText>(R.id.toInput)
+        val fromInput = findViewById<EditText>(R.id.from)
+        val toInput = findViewById<EditText>(R.id.to)
 
         // If both input fields empty - display error message.
         if(fromInput.text.isEmpty() && toInput.text.isEmpty()) {
@@ -102,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.titleLabel)
         val fromUnits = findViewById<TextView>(R.id.fromUnits)
         val toUnits = findViewById<TextView>(R.id.toUnits)
-        findViewById<EditText>(R.id.toInput).text.clear()
+        findViewById<EditText>(R.id.to).text.clear()
         if (isLength) {
             title.text = resources.getText(R.string.lengthTitle)
             fromUnits.text = fromLenUnits.name
@@ -115,9 +114,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(design: Menu): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu_settings, menu)
+        inflater.inflate(R.menu.menu_settings, design)
         return true
     }
 

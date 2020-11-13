@@ -21,7 +21,7 @@ class SettingsActivity : AppCompatActivity() {
         val toSpinner = findViewById<Spinner>(R.id.spin2)
         val doneButton = findViewById<FloatingActionButton>(R.id.doneButton)
 
-        // set spinner values
+        
         val fromUnits = intent.getStringExtra("FROM_UNITS")
         val options = ArrayList<String>()
         if (isLength) {
